@@ -16,9 +16,14 @@ export class HomePage {
 
   agents = signal<Agent[]>([]);
 
-
- // 👉 Computed signals for metrics
   totalAgents = computed(() => this.agents().length);
+
+  roleIcons: Record<string, string> = {
+    Sentinel: 'https://media.valorant-api.com/agents/roles/5fc02f99-4091-4486-a531-98459a3e95e9/displayicon.png',
+    Initiator: 'https://media.valorant-api.com/agents/roles/1b47567f-8f7b-444b-aae3-b0c634622d10/displayicon.png',
+    Controller: 'https://media.valorant-api.com/agents/roles/4ee40330-ecdd-4f2f-98a8-eb1243428373/displayicon.png',
+    Duelist: 'https://media.valorant-api.com/agents/roles/dbe8757e-9e92-4ed4-b39f-9dfc589691d4/displayicon.png',
+  };
 
   rolesCount = computed(() => {
     const counts: Record<string, number> = {};
