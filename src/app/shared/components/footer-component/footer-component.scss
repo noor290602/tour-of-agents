@@ -1,0 +1,11 @@
+.footer-link {
+  color: var(--beige);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.footer-link:hover {
+  color: rgb(166, 166, 166);
+  text-decoration: underline;
+}
