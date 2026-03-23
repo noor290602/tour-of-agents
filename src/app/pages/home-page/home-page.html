@@ -11,6 +11,11 @@
 
     @for (role of rolesCount() | keyvalue; track role.key) {
       <div class="banner-stat">
+        <img
+          [src]="roleIcons[role.key]"
+          [alt]="role.key"
+          class="role-icon"
+        />
         <span class="banner-label">{{ role.key }}</span>
         <span class="banner-value">{{ role.value }}</span>
       </div>
