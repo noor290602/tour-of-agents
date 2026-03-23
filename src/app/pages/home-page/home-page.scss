@@ -1,24 +1,103 @@
 .bg-img-home {
-    background-image: url('https://media.valorant-api.com/maps/2fe4ed3a-450a-948b-6d6b-e89a78e680a9/listviewicontall.png');
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    position: relative;
-    
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1;
-    }
+  background-image: url('https://media.valorant-api.com/maps/2fe4ed3a-450a-948b-6d6b-e89a78e680a9/listviewicontall.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  gap: 1.5rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+  }
 }
 
-// Ensure that the content inside the .bg-img-home is above the overlay
 .bg-img-home > * {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
+}
+
+// Banner -----------------------------------------------
+.info-banner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: rgba(10, 10, 15, 0.72);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 70, 85, 0.2);
+  border-top: 2px solid var(--valorant-red);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  overflow: hidden;
+}
+
+.banner-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.25rem 2.5rem;
+  transition: background 0.25s ease;
+
+  &:hover {
+    background: rgba(255, 70, 85, 0.06);
+  }
+}
+
+.banner-label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--valorant-red);
+}
+
+.banner-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--beige);
+  line-height: 1;
+}
+
+.banner-divider {
+  width: 1px;
+  height: 3rem;
+  background: rgba(255, 70, 85, 0.25);
+  flex-shrink: 0;
+}
+
+// Button -----------------------------------------------
+.agents-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 70, 85, 0.5);
+  border-bottom: 2px solid var(--valorant-red);
+  color: var(--beige);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%);
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    background: var(--valorant-red);
+    color: #fff;
+    box-shadow: 0 0 24px rgba(255, 70, 85, 0.4);
+    border-color: var(--valorant-red);
+
+    svg { transform: translateX(4px); }
+  }
 }
